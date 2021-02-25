@@ -25,10 +25,16 @@ const Home = () => {
     }
   ]);
 
+  const handleDelete = (id) => {
+    const newQuotes = quotes.filter(quote => quote.id !== id);
+    setQuotes(newQuotes);
+  }
+
   return ( 
     <div className="home">
-      <QuoteList quotes={ quotes } 
-        title = "Welcome to Inspiration quotes app"/>
+      <QuoteList quotes = {quotes} 
+        title = "Welcome to Inspiration quotes app"
+        handleDelete={handleDelete} />
     </div>
    );
 }
