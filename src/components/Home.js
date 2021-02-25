@@ -1,4 +1,5 @@
 import { useState } from "react";
+import QuoteList from "./QuoteList";
 
 const Home = () => {
   const [quotes, setQuotes] = useState([
@@ -26,12 +27,8 @@ const Home = () => {
 
   return ( 
     <div className="home">
-      { quotes.map((quote) => (
-        <div className="quote-preview" key={ quote.id }>
-          <h2>{ quote.text }</h2>
-          <p>By: { quote.author }</p>
-        </div>
-      ))}
+      <QuoteList quotes={ quotes } 
+        title = "Welcome to Inspiration quotes app"/>
     </div>
    );
 }
