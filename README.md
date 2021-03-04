@@ -39,6 +39,20 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Run mock API using json-server
+Create a database using the json and mock it using json-server that will create a API endpoints. Data is stored in the json format under the `/data/db.json` file.
+
+To run the mock json server using the db.json file.
+```
+npx json-server --watch data/db.json --port 8000
+```
+
+### Endpoints
+/quotes     -> GET -> Fetch all the quotes
+/quotes/{id} -> GET -> Fetch a single quote
+/quotes     -> POST -> Add a new quote
+/quotes/{id} -> DELETE -> Delete a quote
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

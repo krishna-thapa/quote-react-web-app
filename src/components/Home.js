@@ -32,9 +32,9 @@ const Home = () => {
 
   return ( 
     <div className="home">
-      <QuoteList quotes = {quotes} 
-        title = "Welcome to Inspiration quotes app"
-        handleDelete={handleDelete} />
+      <QuoteList quotes = { quotes } 
+        title = "Welcome to Inspirational quotes app"
+        handleDelete = { handleDelete } />
     </div>
    );
 }
