@@ -1,31 +1,9 @@
-import { useState, useEffect } from "react";
 import { Alert, Spinner, Container } from "react-bootstrap";
+import useFetch from "../hooks/useFetch";
 import QuoteList from "./QuoteList";
 
 const Home = () => {
-  const [quotes, setQuotes] = useState(null);
-  const [isPending, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    setTimeout(() => {
-      fetch('http://localhost:8000/quotesd')
-      .then(response => {
-        if(!response.ok) throw Error('Error response!');
-        return response.json();
-      })
-      .then((data) => {
-        setQuotes(data);
-        setIsPending(false);
-        setError(null);
-      })
-      .catch(err => {
-        setIsPending(false);
-        setError(err.message);
-      })
-    }, 500); //To show the loading spinner
-  }, []);
-
+  const { data: quotes, isPending, error } = useFetch('http://localhost:8000/quotes');
   return ( 
     <div className="home">
       {error && 
