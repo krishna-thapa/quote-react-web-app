@@ -48,10 +48,10 @@ npx json-server --watch data/db.json --port 8000
 ```
 
 ### Endpoints
-/quotes     -> GET -> Fetch all the quotes
-/quotes/{id} -> GET -> Fetch a single quote
-/quotes     -> POST -> Add a new quote
-/quotes/{id} -> DELETE -> Delete a quote
+- /quotes     -> GET -> Fetch all the quotes
+- /quotes/{id} -> GET -> Fetch a single quote
+- /quotes     -> POST -> Add a new quote
+- /quotes/{id} -> DELETE -> Delete a quote
 
 ## Learn More
 
