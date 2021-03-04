@@ -1,40 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import QuoteList from "./QuoteList";
 
 const Home = () => {
-  const [quotes, setQuotes] = useState([
-    {
-      id: 1,
-      text: "Well begun is half done.",
-      author: "Aristotle"
-    },
-    {
-      id: 2,
-      text: "Life is a learning experience, only if you learn.",
-      author: "Yogi Berra"
-    },
-    {
-      id: 3,
-      text: "Self-complacency is fatal to progress.",
-      author: "Margaret Sangster"
-    },
-    {
-      id: 4,
-      text: "Peace comes from within. Do not seek it without.",
-      author: "Buddha"
-    }
-  ]);
+  const [quotes, setQuotes] = useState(null);
 
-  const handleDelete = (id) => {
-    const newQuotes = quotes.filter(quote => quote.id !== id);
-    setQuotes(newQuotes);
-  }
+  useEffect(() => {
+    fetch('http://localhost:8000/quotes')
+      .then(response => {
+        return response.json();
+      })
+      .then((data) => {
+        setQuotes(data);
+      })
+  }, []);
 
   return ( 
     <div className="home">
-      <QuoteList quotes = { quotes } 
-        title = "Welcome to Inspirational quotes app"
-        handleDelete = { handleDelete } />
+      { quotes && <QuoteList quotes = { quotes } 
+        title = "Welcome to Inspirational quotes app" /> }
     </div>
    );
 }
