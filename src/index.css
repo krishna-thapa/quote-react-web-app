@@ -6,27 +6,28 @@
   font-family: "Quicksand";
   color: #333;
 }
-.navbar {
-  padding: 20px;
+.quote-navbar {
+  padding: 30px;
   display: flex;
   align-items: center;
   max-width: 600px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
-.navbar h1 {
+.quote-navbar h1 {
   color: #f1356d;
 }
-.navbar .links {
+.quote-navbar-content {
+  max-width: 600px;
+  margin: 10px auto;
+}
+.quote-navbar-content .links {
   margin-left: auto;
 }
-.navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
-}
-.navbar a:hover {
-  color: #f1356d;
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #f1356d !important;
 }
 .content {
   max-width: 600px;
