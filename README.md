@@ -53,6 +53,10 @@ npx json-server --watch data/db.json --port 8000
 - /quotes     -> POST -> Add a new quote
 - /quotes/{id} -> DELETE -> Delete a quote
 
+## Resources
+- React bootstrap: https://react-bootstrap.github.io/components/cards/#card-columns
+- Dynamic background color for cards: https://stackoverflow.com/questions/60896026/how-do-i-write-a-code-for-a-button-to-generate-random-background-color-gradients
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
