@@ -43,3 +43,11 @@
 .card-body {
   background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
 }
+
+.react-icon-click {
+  size: 20px;
+  color: red;
+}
+.react-icon-click:hover {
+  size: 30px;
+}

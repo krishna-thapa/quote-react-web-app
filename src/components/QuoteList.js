@@ -1,5 +1,7 @@
 import { CardColumns, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { MdEdit } from "react-icons/md";
+import { IconContext } from "react-icons";
 
 const QuoteList = ({ quotes, title }) => {
 
@@ -11,7 +13,11 @@ const QuoteList = ({ quotes, title }) => {
           <Card key={quote.id} border="dark">
             <Card.Header>
               <Link to={`/quotes/${quote.id}`}>
-                Edit
+                <IconContext.Provider value={{ className: 'react-icon-click' }}>
+                  <div>
+                    <MdEdit />
+                  </div>
+                </IconContext.Provider>
               </Link>
             </Card.Header>
             <Card.Body>
