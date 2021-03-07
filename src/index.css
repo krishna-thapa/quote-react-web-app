@@ -31,8 +31,14 @@
 }
 .content {
   max-width: 600px;
-  margin: 40px auto;
+  margin: auto;
   padding: 20px;
+}
+
+/* h2 title of the page*/
+.quote-details h2,
+.quote-list h2 {
+  margin-bottom: 16px;
 }
 
 /* quotes previews / list */
@@ -44,10 +50,7 @@
   background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
 }
 
-.react-icon-click {
-  size: 20px;
-  color: red;
-}
-.react-icon-click:hover {
-  size: 30px;
+.top-react-icons{
+  font-size: 0.9em;
+  padding-bottom: 0.2em;
 }

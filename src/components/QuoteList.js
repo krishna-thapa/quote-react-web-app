@@ -1,6 +1,7 @@
 import { CardColumns, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdEdit } from "react-icons/md";
+import { FaQuoteLeft } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
 const QuoteList = ({ quotes, title }) => {
@@ -13,7 +14,7 @@ const QuoteList = ({ quotes, title }) => {
           <Card key={quote.id} border="dark">
             <Card.Header>
               <Link to={`/quotes/${quote.id}`}>
-                <IconContext.Provider value={{ className: 'react-icon-click' }}>
+                <IconContext.Provider value={{ className: 'primaryBackground' }}>
                   <div>
                     <MdEdit />
                   </div>
@@ -23,7 +24,8 @@ const QuoteList = ({ quotes, title }) => {
             <Card.Body>
               <blockquote className="blockquote mb-0">
                 <p>
-                  {' '} {quote.text} {' '}
+                  {' '} <FaQuoteLeft
+                    className="top-react-icons" /> {quote.text} {' '}
                 </p>
                 <footer className="blockquote-footer">
                   <cite title="Source Title">{quote.author}</cite>
