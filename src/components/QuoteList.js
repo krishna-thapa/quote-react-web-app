@@ -1,4 +1,5 @@
 import { CardColumns, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const QuoteList = ({ quotes, title }) => {
 
@@ -8,7 +9,11 @@ const QuoteList = ({ quotes, title }) => {
       <CardColumns>
         {quotes.map((quote) => (
           <Card key={quote.id} border="dark">
-            <Card.Header>Quote</Card.Header>
+            <Card.Header>
+              <Link to={`/quotes/${quote.id}`}>
+                Edit
+              </Link>
+            </Card.Header>
             <Card.Body>
               <blockquote className="blockquote mb-0">
                 <p>

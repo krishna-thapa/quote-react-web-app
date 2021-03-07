@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Create from "./pages/Create";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import QuoteDetails from "./components/QuoteDetails";
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
+            </Route>
+            <Route path="/quotes/:id">
+              <QuoteDetails />
             </Route>
             <Route exact path="/about">
               <About />
