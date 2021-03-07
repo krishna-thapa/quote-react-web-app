@@ -1,6 +1,6 @@
 import { Alert, Spinner, Container } from "react-bootstrap";
 import useFetch from "../hooks/useFetch";
-import QuoteList from "./QuoteList";
+import QuoteList from "../components/QuoteList";
 
 const Home = () => {
   const { data: quotes, isPending, error } = useFetch('http://localhost:8000/quotes');

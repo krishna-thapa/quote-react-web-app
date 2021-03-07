@@ -1,7 +1,8 @@
 import QuoteNavbar from "./components/QuoteNavbar";
-import Home from "./components/Home";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Create from "./pages/Create";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
+            </Route>
+            <Route exact path="/about">
+              <About />
             </Route>
           </Switch>
         </div>
