@@ -36,17 +36,10 @@
 }
 
 /* quotes previews / list */
-.quote-preview {
-  padding: 10px 16px;
-  margin: 20px 0;
-  background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
-  border-bottom: 1px solid #fafafa;
-}
-.quote-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
-}
-.quote-preview h2 {
-  font-size: 20px;
+.blockquote p {
   color: #f1356d;
-  margin-bottom: 8px;
+}
+
+.card-body {
+  background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
 }
