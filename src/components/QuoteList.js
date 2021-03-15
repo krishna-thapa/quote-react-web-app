@@ -25,7 +25,7 @@ const QuoteList = ({ quotes, title }) => {
               <blockquote className="blockquote mb-0">
                 <p>
                   {' '} <FaQuoteLeft
-                    className="top-react-icons" /> {quote.text} {' '}
+                    className="top-react-icons" /> {quote.quote} {' '}
                 </p>
                 <footer className="blockquote-footer">
                   <cite title="Source Title">{quote.author}</cite>

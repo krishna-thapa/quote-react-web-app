@@ -1,15 +1,30 @@
 import { useState } from "react";
+import { Spinner, Container } from "react-bootstrap";
+
 import '../style/createQuote.css'
 
 const Create = () => {
   const [author, setAuthor] = useState('');
-  const [quoteBody, setQuoteBody] = useState('');
+  const [quote, setQuoteBody] = useState('');
   const [genre, setGenre] = useState('love');
+  const [isPending, setIsPending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const quote = { author, quoteBody, genre };
-    console.log(quote);
+    const quoteContent = { author, quote, genre };
+
+    setIsPending(true);
+
+    setTimeout(() => {
+      fetch('http://localhost:8000/quotes', {
+        method: 'POST',
+        headers: { "content-Type": "application/json" },
+        body: JSON.stringify(quoteContent)
+      }).then(() => {
+        console.log('New quote is added');
+        setIsPending(false);
+      })
+    }, 500); //To show the loading spinner
   }
 
   return (
@@ -26,7 +41,7 @@ const Create = () => {
         <label>Quote body:</label>
         <textarea
           required
-          value={quoteBody}
+          value={quote}
           onChange={(e) => setQuoteBody(e.target.value)}
         ></textarea>
         <label>Genre:</label>
@@ -41,7 +56,16 @@ const Create = () => {
           <option value="family">family</option>
           <option value="other">Other</option>
         </select>
-        <button>Add Quote</button>
+        {!isPending &&
+          <button>Add Quote</button>
+        }
+        {isPending &&
+          <button>
+            <Spinner animation="grow" role="status" variant="info">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+          </button>
+        }
       </form>
     </div>
   );
