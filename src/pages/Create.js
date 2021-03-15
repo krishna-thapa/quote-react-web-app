@@ -6,10 +6,16 @@ const Create = () => {
   const [quoteBody, setQuoteBody] = useState('');
   const [genre, setGenre] = useState('love');
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const quote = { author, quoteBody, genre };
+    console.log(quote);
+  }
+
   return (
     <div className="create">
       <h2>Add a New Quote</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Author:</label>
         <input
           type="text"
@@ -35,6 +41,7 @@ const Create = () => {
           <option value="family">family</option>
           <option value="other">Other</option>
         </select>
+        <button>Add Quote</button>
       </form>
     </div>
   );
