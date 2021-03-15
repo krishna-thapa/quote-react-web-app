@@ -27,7 +27,7 @@ const QuoteDetails = () => {
         <div className="quote-content">
           <blockquote>
             <span className="quote-icon">&ldquo; </span> 
-              {quote.text}
+              {quote.quote}
             <span className="quote-icon"> &rdquo;</span> 
           </blockquote>
           <cite>{quote.author}</cite>
