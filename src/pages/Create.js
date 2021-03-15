@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Spinner, Container } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
+import { useHistory }  from "react-router-dom";
 
 import '../style/createQuote.css'
 
@@ -8,6 +9,7 @@ const Create = () => {
   const [quote, setQuoteBody] = useState('');
   const [genre, setGenre] = useState('love');
   const [isPending, setIsPending] = useState(false);
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ const Create = () => {
       }).then(() => {
         console.log('New quote is added');
         setIsPending(false);
+        history.push(`/`);
       })
     }, 500); //To show the loading spinner
   }
